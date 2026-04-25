@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Krithi Gotur | Finance & Analytics Pitch</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap');
+        
+        :root {
+            --primary: #0a2540;
+            --accent: #1e88e5;
+            --light: #f8f9fa;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', system-ui, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9f0f7 100%);
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            background: white;
+            box-shadow: 0 20px 60px rgba(10, 37, 64, 0.15);
+            border-radius: 16px;
+            overflow: hidden;
+        }
+        
+        /* Header */
+        .header {
+            background: var(--primary);
+            color: white;
+            padding: 60px 80px 40px;
+            display: flex;
+            align-items: center;
+            gap: 60px;
+        }
+        
+        .header-content {
+            flex: 1;
+        }
+        
+        .header h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.2rem;
+            margin-bottom: 8px;
+            font-weight: 700;
+        }
+        
+        .header .subtitle {
+            font-size: 1.35rem;
+            opacity: 0.95;
+            margin-bottom: 12px;
+        }
+        
+        .header .details {
+            font-size: 1.05rem;
+            opacity: 0.9;
+        }
+        
+        .header .details a {
+            color: white;
+            text-decoration: none;
+        }
+        
+        .header .details a:hover {
+            text-decoration: underline;
+        }
+        
+        .photo {
+            width: 220px;
+            height: 220px;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+            flex-shrink: 0;
+        }
+        
+        .photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        /* Main Content */
+        .main {
+            padding: 60px 80px;
+        }
+        
+        .tagline {
+            font-size: 1.55rem;
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 40px;
+            border-left: 5px solid var(--accent);
+            padding-left: 20px;
+        }
+        
+        .section {
+            margin-bottom: 55px;
+        }
+        
+        .section-title {
+            font-size: 1.45rem;
+            color: var(--primary);
+            margin-bottom: 22px;
+            position: relative;
+            padding-bottom: 12px;
+        }
+        
+        .section-title:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background: var(--accent);
+            border-radius: 2px;
+        }
+        
+        .strength-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 28px;
+        }
+        
+        .strength-card {
+            background: #f8fbff;
+            border: 1px solid #e0e9f5;
+            border-radius: 12px;
+            padding: 26px;
+            transition: all 0.3s ease;
+        }
+        
+        .strength-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(30, 136, 229, 0.12);
+            border-color: var(--accent);
+        }
+        
+        .strength-card h3 {
+            color: var(--primary);
+            font-size: 1.25rem;
+            margin-bottom: 14px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .strength-card ul {
+            padding-left: 20px;
+        }
+        
+        .strength-card li {
+            margin-bottom: 10px;
+            font-size: 1.02rem;
+        }
+        
+        .passion-grid, .looking-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 22px;
+        }
+        
+        .item {
+            background: white;
+            border-left: 4px solid var(--accent);
+            padding: 20px 24px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+        
+        .quote {
+            background: #f8fbff;
+            border-left: 6px solid var(--accent);
+            padding: 32px 40px;
+            font-style: italic;
+            font-size: 1.1rem;
+            color: #444;
+            margin: 50px 0;
+            border-radius: 8px;
+        }
+        
+        .quote-author {
+            margin-top: 18px;
+            font-style: normal;
+            font-weight: 600;
+            color: var(--primary);
+        }
+        
+        /* CTA */
+        .cta {
+            background: linear-gradient(135deg, var(--primary), #1e3a5f);
+            color: white;
+            padding: 50px 80px;
+            text-align: center;
+        }
+        
+        .cta h2 {
+            font-size: 2rem;
+            margin-bottom: 16px;
+        }
+        
+        .cta p {
+            font-size: 1.15rem;
+            max-width: 600px;
+            margin: 0 auto 30px;
+            opacity: 0.95;
+        }
+        
+        .contact-info {
+            font-size: 1.25rem;
+            margin: 25px 0;
+        }
+        
+        .contact-info a {
+            color: #a0d0ff;
+            text-decoration: none;
+        }
+        
+        .contact-info a:hover {
+            color: white;
+            text-decoration: underline;
+        }
+        
+        /* Footer */
+        .footer {
+            background: #f1f5f9;
+            padding: 25px 80px;
+            text-align: center;
+            font-size: 0.95rem;
+            color: #555;
+        }
+        
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 20px;
+        }
+        
+        .skill-tag {
+            background: #e6f0ff;
+            color: var(--primary);
+            padding: 6px 16px;
+            border-radius: 30px;
+            font-size: 0.95rem;
+            font-weight: 500;
+        }
+        
+        @media (max-width: 900px) {
+            .header {
+                flex-direction: column;
+                text-align: center;
+                padding: 50px 40px 40px;
+            }
+            .photo {
+                margin: 20px auto;
+            }
+            .main, .cta {
+                padding: 50px 40px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-content">
+                <h1>Krithi Gotur</h1>
+                <p class="subtitle">Aspiring Finance & Analytics Professional</p>
+                <p class="details">
+                    Virginia Tech • B.S. Corporate Financial Management &amp; B.S. Management Consulting &amp; Analytics<br>
+                    Charlotte, NC • (704) 772-6966 • <a href="mailto:krithi@vt.edu">krithi@vt.edu</a><br>
+                    <a href="https://www.linkedin.com/in/krithigotur" target="_blank">linkedin.com/in/krithigotur</a><br>
+                    Expected Graduation: May 2028 • GPA: 3.98
+                </p>
+            </div>
+            <div class="photo">
+                <!-- Replace with your actual professional photo URL -->
+                <img src="https://via.placeholder.com/220x220/0a2540/ffffff?text=Krithi+Gotur" alt="Krithi Gotur Professional Headshot">
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <div class="main">
+            <p class="tagline">
+                Navigating Business Excellence Through Analytical Rigor, Finance Acumen, and Structured Frameworks
+            </p>
+
+            <!-- What I Bring -->
+            <div class="section">
+                <h2 class="section-title">What I Bring – Core Strengths</h2>
+                <div class="strength-grid">
+                    <!-- Analytical Problem Solving -->
+                    <div class="strength-card">
+                        <h3>🔍 Analytical Problem Solving</h3>
+                        <ul>
+                            <li>Generated &amp; evaluated <strong>20,000+</strong> realistic process simulations using Python, Excel, and Gemini at Re-ViVE (Cybersecurity Hygiene Intern)</li>
+                            <li>Built and analyzed <strong>100+</strong> process maps in ViVe platform to identify workflow inefficiencies</li>
+                            <li>Excel expert: pivot tables, lookups, formulas, charts + Business Statistics &amp; Modeling</li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Finance & Mathematics -->
+                    <div class="strength-card">
+                        <h3>📊 Finance &amp; Mathematics Background</h3>
+                        <ul>
+                            <li>Double major in <strong>Corporate Financial Management</strong> and <strong>Management Consulting &amp; Analytics</strong></li>
+                            <li>Coursework: Accounting &amp; Information Systems, Business Analytics &amp; BI, Business Statistics</li>
+                            <li>Strong foundation in financial modeling, valuation, and data-driven decision making</li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Structured Thinking -->
+                    <div class="strength-card">
+                        <h3>📋 Structured Thinking &amp; Frameworks</h3>
+                        <ul>
+                            <li>Led cross-functional collaboration and presented optimization insights to stakeholders</li>
+                            <li>Designed structured lesson plans &amp; metrics that improved outcomes by ~40% in mentorship program</li>
+                            <li>Proven team leadership managing 10–20 participants in fast-paced environments</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Passionate to Learn -->
+            <div class="section">
+                <h2 class="section-title">What I’m Passionate to Learn</h2>
+                <div class="passion-grid">
+                    <div class="item">
+                        <strong>Case Studies on Business Scaling</strong><br>
+                        Real-world strategies for operational growth and strategic decision-making.
+                    </div>
+                    <div class="item">
+                        <strong>Financial Modeling &amp; Valuation Analytics (FMVA)</strong><br>
+                        Advanced modeling techniques inspired by CFI programs.
+                    </div>
+                    <div class="item">
+                        <strong>GenAI, Agentic Solutions &amp; Data Curation</strong><br>
+                        Leveraging AI to enhance business intelligence and automation.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Looking For -->
+            <div class="section">
+                <h2 class="section-title">What I’m Looking For in an Internship</h2>
+                <div class="looking-grid">
+                    <div class="item">
+                        <strong>Ambiguous Challenges</strong><br>
+                        Opportunities requiring strong collaboration and structured problem-solving processes.
+                    </div>
+                    <div class="item">
+                        <strong>Technical Learning Opportunities</strong><br>
+                        Hands-on experience with advanced finance, analytics, and modeling tools.
+                    </div>
+                    <div class="item">
+                        <strong>Innovation in Finance</strong><br>
+                        Applying data, AI, and frameworks to drive measurable business value.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Quote -->
+            <div class="quote">
+                “Krithi demonstrated exceptional analytical skills, process thinking, and stakeholder collaboration. She quickly became a valuable contributor to our cybersecurity readiness initiatives.”
+                <div class="quote-author">
+                    — Re-ViVE Team (Data Analytics Intern, Summer 2025)
+                </div>
+            </div>
+
+            <!-- Additional Highlights -->
+            <div class="section">
+                <h2 class="section-title">Education &amp; Key Achievements</h2>
+                <p><strong>Virginia Tech, Pamplin College of Business</strong> — Dean’s List (3x), R.E. &amp; C.A. Sorensen Merit Scholar, AP Scholar with Distinction</p>
+                <div class="skills">
+                    <span class="skill-tag">Python</span>
+                    <span class="skill-tag">MS Excel (Advanced)</span>
+                    <span class="skill-tag">Process Mining (ViVe)</span>
+                    <span class="skill-tag">Business Analytics</span>
+                    <span class="skill-tag">Financial Modeling</span>
+                    <span class="skill-tag">SQLite</span>
+                    <span class="skill-tag">GenAI Tools</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- CTA -->
+        <div class="cta">
+            <h2>Ready to Deliver Value?</h2>
+            <p>I’m eager to bring structured analytical thinking, financial acumen, and a growth mindset to your team.</p>
+            <div class="contact-info">
+                <strong>Contact:</strong> 
+                <a href="mailto:krithi@vt.edu">krithi@vt.edu</a> • 
+                (704) 772-6966<br>
+                <a href="https://www.linkedin.com/in/krithigotur" target="_blank">Connect on LinkedIn</a>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="footer">
+            © 2026 Krithi Gotur • Virginia Tech • Charlotte, NC
+        </footer>
+    </div>
+</body>
+</html>
